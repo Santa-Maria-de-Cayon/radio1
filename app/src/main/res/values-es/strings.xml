@@ -55,5 +55,11 @@
     <string name="rusia">Russia</string>
     <string name="spain">España</string>
 
+    <string name="rossii">Radio Rossii</string>
+    <string name="record">Radio Record</string>
+    <string name="newradio">Novoe Radio</string>
+    <string name="marusya">Мarusya</string>
+    <string name="energy">Radio Energy</string>
+    <string name="evropa">Europa Plyus</string>
 
 </resources>

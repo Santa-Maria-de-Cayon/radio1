@@ -10,10 +10,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EspRadio" android:label="@string/actEs" android:screenOrientation="portrait"/>
-        <activity android:name=".RusRadio" android:label="@string/actRu" android:screenOrientation="portrait"/>
+        <meta-data
+            android:name="asset_statements"
+            android:resource="@string/asset_statements" />
+
         <activity
-            android:name=".MainActivity" android:screenOrientation="portrait">
+            android:name=".EspRadio"
+            android:label="@string/actEs"
+            android:screenOrientation="portrait">
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="http"
+                    android:host="suzdalenko.com" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".RusRadio"
+            android:label="@string/actRu"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -51,6 +51,14 @@
 
     <string name="rusia">Россия</string>
     <string name="spain">Испания</string>
+    <string name="asset_statements" translatable="false">[{ \"include\": \"https://suzdalenko.com/.well-known/assetlinks.json\" }]</string>
+
+    <string name="rossii">Радио России</string>
+    <string name="record">Радио Рекорд</string>
+    <string name="newradio">Новое Радио</string>
+    <string name="marusya">Маруся</string>
+    <string name="evropa">Европа Плюс</string>
+    <string name="energy">Радио Energy</string>
 
 
 </resources>

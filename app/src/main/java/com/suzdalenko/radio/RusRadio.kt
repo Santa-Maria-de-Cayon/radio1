@@ -25,6 +25,13 @@ class RusRadio : AppCompatActivity()  , View.OnClickListener {
                 R.id.komsomol -> { val uris = Uri.parse("http://suzdalenko.com?+komsomol");val intents = Intent(Intent.ACTION_VIEW, uris);startActivity(intents); }
                 R.id.ser48 -> { val uris = Uri.parse("http://suzdalenko.com?+serebryaniy-dozd-48");val intents = Intent(Intent.ACTION_VIEW, uris);startActivity(intents); }
                 R.id.ser128 -> { val uris = Uri.parse("http://suzdalenko.com?+serebryaniy-dozd-128");val intents = Intent(Intent.ACTION_VIEW, uris);startActivity(intents); }
+
+                R.id.rossii -> { val uris = Uri.parse("http://suzdalenko.com?+radio-rossii");val intents = Intent(Intent.ACTION_VIEW, uris);startActivity(intents); }
+                R.id.record -> { val uris = Uri.parse("http://suzdalenko.com?+record");val intents = Intent(Intent.ACTION_VIEW, uris);startActivity(intents); }
+                R.id.newradio -> { val uris = Uri.parse("http://suzdalenko.com?+newradio");val intents = Intent(Intent.ACTION_VIEW, uris);startActivity(intents); }
+                R.id.marusya -> { val uris = Uri.parse("http://suzdalenko.com?+marusya");val intents = Intent(Intent.ACTION_VIEW, uris);startActivity(intents); }
+                R.id.evropa -> { val uris = Uri.parse("http://suzdalenko.com?+evropa");val intents = Intent(Intent.ACTION_VIEW, uris);startActivity(intents); }
+                R.id.energy -> { val uris = Uri.parse("http://suzdalenko.com?+energy");val intents = Intent(Intent.ACTION_VIEW, uris);startActivity(intents); }
             }
         }
     }
@@ -48,6 +55,13 @@ class RusRadio : AppCompatActivity()  , View.OnClickListener {
         komsomol.setOnClickListener(this)
         ser48.setOnClickListener(this)
         ser128.setOnClickListener(this)
+
+        rossii.setOnClickListener(this)
+        record.setOnClickListener(this)
+        newradio.setOnClickListener(this)
+        marusya.setOnClickListener(this)
+        evropa.setOnClickListener(this)
+        energy.setOnClickListener(this)
 
     }
 }
