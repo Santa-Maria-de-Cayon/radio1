@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/black">
+
+    <LinearLayout style="@style/LinStyle"
+        android:orientation="vertical"
+        android:id="@+id/parent">
+
+
+        <RelativeLayout style="RelatStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView style="@style/TextViewStyle"
+                android:text="@string/russkoe_radio96" />
+            <ImageView
+                style="@style/ImageStyle" android:id="@+id/rus_radio96"
+                android:contentDescription="@string/russkoe_radio96"
+                android:src="@drawable/go"/>
+        </RelativeLayout>
+
+        <RelativeLayout style="RelatStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView style="@style/TextViewStyle"
+                android:text="@string/svoboda" />
+            <ImageView
+                style="@style/ImageStyle" android:id="@+id/svoboda"
+                android:contentDescription="@string/svoboda"
+                android:src="@drawable/go"/>
+        </RelativeLayout>
+
+        <RelativeLayout style="RelatStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView style="@style/TextViewStyle"
+                android:text="@string/russkoe_radio128" />
+            <ImageView
+                style="@style/ImageStyle" android:id="@+id/rus_radio128"
+                android:contentDescription="@string/russkoe_radio128"
+                android:src="@drawable/go"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout style="RelatStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView style="@style/TextViewStyle"
+                android:text="@string/drug_astraj32" />
+            <ImageView
+                style="@style/ImageStyle" android:id="@+id/drug_astraj32"
+                android:contentDescription="@string/drug_astraj32"
+                android:src="@drawable/go"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout style="RelatStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView style="@style/TextViewStyle"
+                android:text="@string/drug_astraj128" />
+            <ImageView
+                style="@style/ImageStyle" android:id="@+id/drug_astraj128"
+                android:contentDescription="@string/drug_astraj128"
+                android:src="@drawable/go"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout style="RelatStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView style="@style/TextViewStyle"
+                android:text="@string/shanson" />
+            <ImageView
+                style="@style/ImageStyle" android:id="@+id/shanson"
+                android:contentDescription="@string/shanson"
+                android:src="@drawable/go"/>
+        </RelativeLayout>
+
+        <RelativeLayout style="RelatStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView style="@style/TextViewStyle"
+                android:text="@string/ejo" />
+            <ImageView
+                style="@style/ImageStyle" android:id="@+id/ejo"
+                android:contentDescription="@string/ejo"
+                android:src="@drawable/go"/>
+        </RelativeLayout>
+
+        <RelativeLayout style="RelatStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView style="@style/TextViewStyle"
+                android:text="@string/di" />
+            <ImageView
+                style="@style/ImageStyle" android:id="@+id/di"
+                android:contentDescription="@string/di"
+                android:src="@drawable/go"/>
+        </RelativeLayout>
+
+        <RelativeLayout style="RelatStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView style="@style/TextViewStyle"
+                android:text="@string/yomor" />
+            <ImageView
+                style="@style/ImageStyle" android:id="@+id/yomor"
+                android:contentDescription="@string/yomor"
+                android:src="@drawable/go"/>
+        </RelativeLayout>
+
+        <RelativeLayout style="RelatStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView style="@style/TextViewStyle"
+                android:text="@string/r90" />
+            <ImageView
+                style="@style/ImageStyle" android:id="@+id/r90"
+                android:contentDescription="@string/r90"
+                android:src="@drawable/go"/>
+        </RelativeLayout>
+
+        <RelativeLayout style="RelatStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView style="@style/TextViewStyle"
+                android:text="@string/vesti" />
+            <ImageView
+                style="@style/ImageStyle" android:id="@+id/vesti"
+                android:contentDescription="@string/vesti"
+                android:src="@drawable/go"/>
+        </RelativeLayout>
+
+        <RelativeLayout style="RelatStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView style="@style/TextViewStyle"
+                android:text="@string/mayak" />
+            <ImageView
+                style="@style/ImageStyle" android:id="@+id/mayak"
+                android:contentDescription="@string/mayak"
+                android:src="@drawable/go"/>
+        </RelativeLayout>
+
+        <RelativeLayout style="RelatStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView style="@style/TextViewStyle"
+                android:text="@string/komsomol" />
+            <ImageView
+                style="@style/ImageStyle" android:id="@+id/komsomol"
+                android:contentDescription="@string/komsomol"
+                android:src="@drawable/go"/>
+        </RelativeLayout>
+
+        <RelativeLayout style="RelatStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView style="@style/TextViewStyle"
+                android:text="@string/ser48" />
+            <ImageView
+                style="@style/ImageStyle" android:id="@+id/ser48"
+                android:contentDescription="@string/ser48"
+                android:src="@drawable/go"/>
+        </RelativeLayout>
+
+        <RelativeLayout style="RelatStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView style="@style/TextViewStyle"
+                android:text="@string/ser128" />
+            <ImageView
+                style="@style/ImageStyle" android:id="@+id/ser128"
+                android:contentDescription="@string/ser128"
+                android:src="@drawable/go"/>
+        </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>
+</ScrollView>

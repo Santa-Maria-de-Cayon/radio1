@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Русское Радио, Радио Свобода, Вести Фм, Радио России</string>
+
+    <string name="actEs">Радио Испании</string>
+    <string name="actRu">Радио России </string>
+
+    <string name="russkoe_radio96">Русское Радио 96</string>
+    <string name="russkoe_radio128">Русское радио 128</string>
+    <string name="drug_astraj32">Другая Астрахань 32</string>
+    <string name="drug_astraj128">Другая Астрахань 128</string>
+    <string name="shanson">Радио Шансон</string>
+    <string name="ejo">Эхо Москвы</string>
+    <string name="di">Ди Фм</string>
+    <string name="yomor">Юмор Фм</string>
+    <string name="ser128">Серебряный Дождь 128</string>
+    <string name="r90">Дискотека 90-х</string>
+    <string name="vesti">Вести Фм</string>
+    <string name="mayak">Радио Маяк</string>
+    <string name="komsomol">Комсомольская правда</string>
+    <string name="svoboda">Радио Свобода</string>
+    <string name="ser48">Серебряный Дождь 48</string>
+
+
+
+    <string  name="dial">Cadena Dial</string>
+    <string  name="los40">Los 40 Principales</string>
+    <string  name="los40clas">Los 40 Classic</string>
+    <string  name="cien">Cadena Cien</string>
+    <string  name="rock">Rock Fm</string>
+    <string  name="loca">Loca Fm</string>
+    <string  name="rac1">RAC 1</string>
+    <string  name="onda">Onda Cero</string>
+    <string  name="ibiza">Ibiza</string>
+    <string  name="rne">RNE</string>
+    <string  name="inter">Intereconomia</string>
+    <string  name="ser">SER</string>
+    <string  name="ib">Ibiza Sonica</string>
+    <string  name="vinilo">Radio Vinilo</string>
+    <string  name="cope">Radio Cope</string>
+    <string  name="max">Maxima</string>
+    <string  name="hit">Hit</string>
+    <string  name="kiss">Kiss</string>
+    <string  name="gay">Radio Gay</string>
+    <string  name="fresca">La Fresca</string>
+    <string  name="holi">Holiday y gym</string>
+    <string  name="xxx">Xxx Rock</string>
+    <string  name="radiole">Radiole</string>
+    <string  name="localatino">Loca Latino</string>
+
+
+    <string name="rusia">Россия</string>
+    <string name="spain">Испания</string>
+
+
+</resources>
