@@ -5,38 +5,69 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.google.android.exoplayer2.ExoPlayerFactory
+import com.google.android.exoplayer2.SimpleExoPlayer
+import com.google.android.exoplayer2.source.ProgressiveMediaSource
+import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import kotlinx.android.synthetic.main.activity_esp_radio.*
-import kotlinx.android.synthetic.main.activity_rus_radio.*
+import kotlinx.android.synthetic.main.activity_esp_radio.player_view
+
+
 
 class EspRadio : AppCompatActivity()  , View.OnClickListener {
+    lateinit var  player: SimpleExoPlayer
     override fun onClick(v: View?) {
         if (v != null) {
             when(v.id){
-                R.id.dial -> { val uris = Uri.parse("http://suzdalenko.com?+cadena-dial");val intents = Intent(Intent.ACTION_VIEW, uris);startActivity(intents); }
-                R.id.los40 -> { val uris = Uri.parse("http://suzdalenko.com?+los-40");val intents = Intent(Intent.ACTION_VIEW, uris);startActivity(intents); }
-                R.id.los40clas -> { val uris = Uri.parse("http://suzdalenko.com?+los-40-classic");val intents = Intent(Intent.ACTION_VIEW, uris);startActivity(intents); }
-                R.id.cien -> { val uris = Uri.parse("http://suzdalenko.com?+cadena-100");val intents = Intent(Intent.ACTION_VIEW, uris);startActivity(intents); }
-                R.id.rock -> { val uris = Uri.parse("http://suzdalenko.com?+rock");val intents = Intent(Intent.ACTION_VIEW, uris);startActivity(intents); }
-                R.id.loca -> { val uris = Uri.parse("http://suzdalenko.com?+loca-fm");val intents = Intent(Intent.ACTION_VIEW, uris);startActivity(intents); }
-                R.id.rac1 -> { val uris = Uri.parse("http://suzdalenko.com?+rac1");val intents = Intent(Intent.ACTION_VIEW, uris);startActivity(intents); }
-                R.id.onda -> { val uris = Uri.parse("http://suzdalenko.com?+onda-cero");val intents = Intent(Intent.ACTION_VIEW, uris);startActivity(intents); }
-                R.id.ibiza -> { val uris = Uri.parse("http://suzdalenko.com?+ibiza");val intents = Intent(Intent.ACTION_VIEW, uris);startActivity(intents); }
-                R.id.rne -> { val uris = Uri.parse("http://suzdalenko.com?+rne");val intents = Intent(Intent.ACTION_VIEW, uris);startActivity(intents); }
-                R.id.inter -> { val uris = Uri.parse("http://suzdalenko.com?+inter-economia");val intents = Intent(Intent.ACTION_VIEW, uris);startActivity(intents); }
-                R.id.ser -> { val uris = Uri.parse("http://suzdalenko.com?+ser");val intents = Intent(Intent.ACTION_VIEW, uris);startActivity(intents); }
-                R.id.ib -> { val uris = Uri.parse("http://suzdalenko.com?+ibiza-sonica");val intents = Intent(Intent.ACTION_VIEW, uris);startActivity(intents); }
-                R.id.vinilo -> { val uris = Uri.parse("http://suzdalenko.com?+vinilo");val intents = Intent(Intent.ACTION_VIEW, uris);startActivity(intents); }
-                R.id.cope -> { val uris = Uri.parse("http://suzdalenko.com?+cope");val intents = Intent(Intent.ACTION_VIEW, uris);startActivity(intents); }
+                R.id.dial ->       openBrouser("http://suzdalenko.com?+cadena-dial")
+                R.id.los40 ->      openBrouser("http://suzdalenko.com?+los-40")
+                R.id.los40clas ->  openBrouser("http://suzdalenko.com?+los-40-classic")
+                R.id.cien ->       openBrouser("http://suzdalenko.com?+cadena-100")
+                R.id.rock ->       openBrouser("http://suzdalenko.com?+rock")
+                R.id.loca ->       openBrouser("http://suzdalenko.com?+loca-fm")
+                R.id.rac1 ->       openBrouser("http://suzdalenko.com?+rac1")
+                R.id.onda ->       openBrouser("http://suzdalenko.com?+onda-cero")
+                R.id.ibiza ->      openBrouser("http://suzdalenko.com?+ibiza")
+                R.id.rne ->        openBrouser("http://suzdalenko.com?+rne")
+                R.id.inter ->      openBrouser("http://suzdalenko.com?+inter-economia")
+                R.id.ser ->        openBrouser("http://suzdalenko.com?+ser")
+                R.id.ib ->         openBrouser("http://suzdalenko.com?+ibiza-sonica")
+                R.id.vinilo ->     openBrouser("http://suzdalenko.com?+vinilo")
+                R.id.cope ->       openBrouser("http://suzdalenko.com?+cope")
+                R.id.max ->        openBrouser("http://suzdalenko.com?+maxima")
+                R.id.hit ->        openBrouser("http://suzdalenko.com?+hit")
+                R.id.kiss ->       openBrouser("http://suzdalenko.com?+kiss")
+                R.id.gay ->        openBrouser("http://suzdalenko.com?+gay")
+                R.id.fresca ->     openBrouser("http://suzdalenko.com?+la-fresca")
+                R.id.holi ->       openBrouser("http://suzdalenko.com?+holidaygym")
+                R.id.xxx ->        openBrouser("http://suzdalenko.com?+xxx-rock")
+                R.id.radiole ->    openBrouser("http://suzdalenko.com?+radiole")
+                R.id.localatino -> openBrouser("http://suzdalenko.com?+loca-latino")
 
-                R.id.max -> { val uris = Uri.parse("http://suzdalenko.com?+maxima");val intents = Intent(Intent.ACTION_VIEW, uris);startActivity(intents); }
-                R.id.hit -> { val uris = Uri.parse("http://suzdalenko.com?+hit");val intents = Intent(Intent.ACTION_VIEW, uris);startActivity(intents); }
-                R.id.kiss -> { val uris = Uri.parse("http://suzdalenko.com?+kiss");val intents = Intent(Intent.ACTION_VIEW, uris);startActivity(intents); }
-                R.id.gay -> { val uris = Uri.parse("http://suzdalenko.com?+gay");val intents = Intent(Intent.ACTION_VIEW, uris);startActivity(intents); }
-                R.id.fresca -> { val uris = Uri.parse("http://suzdalenko.com?+la-fresca");val intents = Intent(Intent.ACTION_VIEW, uris);startActivity(intents); }
-                R.id.holi -> { val uris = Uri.parse("http://suzdalenko.com?+holidaygym");val intents = Intent(Intent.ACTION_VIEW, uris);startActivity(intents); }
-                R.id.xxx -> { val uris = Uri.parse("http://suzdalenko.com?+xxx-rock");val intents = Intent(Intent.ACTION_VIEW, uris);startActivity(intents); }
-                R.id.radiole -> { val uris = Uri.parse("http://suzdalenko.com?+radiole");val intents = Intent(Intent.ACTION_VIEW, uris);startActivity(intents); }
-                R.id.localatino -> { val uris = Uri.parse("http://suzdalenko.com?+loca-latino");val intents = Intent(Intent.ACTION_VIEW, uris);startActivity(intents); }
+                R.id._dial ->       playExoPlayer("https://17873.live.streamtheworld.com/CADENADIAL_SC")
+                R.id._los40 ->      playExoPlayer("https://20403.live.streamtheworld.com/LOS40_SC")
+                R.id._los40clas ->  playExoPlayer("https://20863.live.streamtheworld.com/LOS40_CLASSIC_SC")
+                R.id._cien ->       playExoPlayer("https://cadena100-cope-rrcast.flumotion.com/cope/cadena100-low.mp3")
+                R.id._rock ->       playExoPlayer("https://rockfm-cope-rrcast.flumotion.com/cope/rockfm-low.mp3")
+                R.id._loca ->       playExoPlayer("http://audio-online.net:2300/live")
+                R.id._rac1 ->       playExoPlayer("https://streaming.rac1.cat/")
+                R.id._onda ->       playExoPlayer("https://icecast-streaming.nice264.com/ondacero")
+                R.id._ibiza ->      playExoPlayer("http://ibizaglobalradio.streaming-pro.com:8024/stream/1/")
+                R.id._rne ->        playExoPlayer("http://rne.rtveradio.cires21.com/rne.mp3")
+                R.id._inter ->      playExoPlayer("http://212.85.46.144/siliconorg")
+                R.id._ser ->        playExoPlayer("https://19983.live.streamtheworld.com/CADENASER_SC")
+                R.id._ib ->         playExoPlayer("http://s1.sonicabroadcast.com:7005/stream/1/")
+                R.id._vinilo ->     playExoPlayer("http://server9.emitironline.com:10923/;")
+                R.id._cope ->       playExoPlayer("https://net1-cope-rrcast.flumotion.com/cope/net1-low.mp3")
+                R.id._max ->        playExoPlayer("https://20073.live.streamtheworld.com/MAXIMAFM_SC")
+                R.id._hit ->        playExoPlayer("https://hitfm.kissfmradio.cires21.com/hitfm.mp3")
+                R.id._kiss ->       playExoPlayer("http://kissfm.kissfmradio.cires21.com/kissfm.mp3")
+                R.id._gay ->        playExoPlayer("http://icepool.silvacast.com/GAYFM.mp3")
+                R.id._fresca ->     playExoPlayer("http://stream.produccionesdale.com:8899/altacalidad")
+                R.id._holi ->       playExoPlayer("http://holidaygym.emitironline.com/")
+                R.id._xxx ->        playExoPlayer("http://sc15.shoutcaststreaming.us:8140/;4537697477933063stream.nsv")
+                R.id._radiole ->    playExoPlayer("http://20723.live.streamtheworld.com/RADIOLE.mp3")
+                R.id._localatino -> playExoPlayer("http://audio-online.net:8012/live")
             }
         }
     }
@@ -44,6 +75,12 @@ class EspRadio : AppCompatActivity()  , View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_esp_radio)
+
+        player  = ExoPlayerFactory.newSimpleInstance(this)
+        player_view.setPlayer(player)
+        player.setPlayWhenReady(true);
+        player_view.setControllerHideOnTouch(false)
+
 
         dial.setOnClickListener(this)
         los40.setOnClickListener(this)
@@ -70,10 +107,52 @@ class EspRadio : AppCompatActivity()  , View.OnClickListener {
         radiole.setOnClickListener(this)
         localatino.setOnClickListener(this)
 
+        _dial.setOnClickListener(this)
+        _los40.setOnClickListener(this)
+        _los40clas.setOnClickListener(this)
+        _cien.setOnClickListener(this)
+        _rock.setOnClickListener(this)
+        _loca.setOnClickListener(this)
+        _rac1.setOnClickListener(this)
+        _onda.setOnClickListener(this)
+        _ibiza.setOnClickListener(this)
+        _rne.setOnClickListener(this)
+        _inter.setOnClickListener(this)
+        _ser.setOnClickListener(this)
+        _ib.setOnClickListener(this)
+        _vinilo.setOnClickListener(this)
+        _cope.setOnClickListener(this)
+        _max.setOnClickListener(this)
+        _hit.setOnClickListener(this)
+        _kiss.setOnClickListener(this)
+        _gay.setOnClickListener(this)
+        _fresca.setOnClickListener(this)
+        _holi.setOnClickListener(this)
+        _xxx.setOnClickListener(this)
+        _radiole.setOnClickListener(this)
+        _localatino.setOnClickListener(this)
 
 
 
 
 
+    }
+
+    private fun playExoPlayer(s: String) {
+        val contentMediaSource: ProgressiveMediaSource = ProgressiveMediaSource.Factory(
+            DefaultDataSourceFactory(this, "Mozilla")
+        ).createMediaSource(Uri.parse(s))
+        player.prepare(contentMediaSource)
+    }
+
+
+    private fun openBrouser(s: String) {
+        val uris:Uri = Uri.parse(s);val intents = Intent(Intent.ACTION_VIEW, uris);startActivity(intents);
+    }
+
+
+    override fun onDestroy() {
+        super.onDestroy()
+        player.release()
     }
 }

@@ -35,4 +35,9 @@
         <item name="android:layout_alignParentRight">true</item>
 
     </style>
+
+    <style name="linButton">
+        <item name="android:layout_margin">7dp</item>
+
+    </style>
 </resources>

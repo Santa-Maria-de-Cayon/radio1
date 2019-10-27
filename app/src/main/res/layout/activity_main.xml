@@ -11,24 +11,42 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         >
-      <TextView
-          android:textSize="37sp"
-          android:textColor="@color/red"
-          android:layout_width="match_parent"
-          android:gravity="center"
-          android:layout_height="wrap_content"
-          android:text="@string/rusia"
-          android:id="@+id/rus"
-          />
-        <TextView
+
+        <LinearLayout
+            style="@style/linButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/red">
+            <TextView
+                android:textSize="37sp"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:text="@string/rusia"
+                android:id="@+id/rus"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+           style="@style/linButton"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:background="@color/red">
+           <TextView
             android:textSize="37sp"
-            android:textColor="@color/red"
+            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:gravity="center"
             android:layout_height="wrap_content"
             android:text="@string/spain"
             android:id="@+id/spain"
             />
+        </LinearLayout>
+
+
     </LinearLayout>
+
 
 </ScrollView>
