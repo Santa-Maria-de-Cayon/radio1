@@ -4,20 +4,59 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
+import android.widget.RelativeLayout
+import android.widget.ScrollView
 import com.google.android.exoplayer2.ExoPlayerFactory
 import com.google.android.exoplayer2.SimpleExoPlayer
 import com.google.android.exoplayer2.source.ProgressiveMediaSource
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
+import com.google.android.gms.ads.AdListener
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.activity_rus_radio.*
 
 class RusRadio : AppCompatActivity()  , View.OnClickListener {
-
-lateinit var  player:SimpleExoPlayer
+    lateinit var mAdViewRus : AdView
+    lateinit var  player:SimpleExoPlayer
+    lateinit var rus_scrol : ScrollView
+    lateinit var layoutParams : RelativeLayout.LayoutParams
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rus_radio)
+
+
+
+        rus_scrol = findViewById(R.id.rus_scrol)
+        MobileAds.initialize(this) {}
+
+        mAdViewRus = findViewById(R.id.mAdViewRus)
+        val adRequest = AdRequest.Builder().build()
+        mAdViewRus.loadAd(adRequest)
+        Log.d("tag", "start start")
+        layoutParams = rus_scrol.getLayoutParams() as RelativeLayout.LayoutParams
+        mAdViewRus.adListener = object: AdListener() {
+            override fun onAdLoaded() {
+                layoutParams.setMargins(0, 75, 0, 190);
+                rus_scrol.setLayoutParams(layoutParams)
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
 
         player  = ExoPlayerFactory.newSimpleInstance(this)
         player_view.setPlayer(player)
@@ -142,6 +181,22 @@ lateinit var  player:SimpleExoPlayer
     override fun onDestroy() {
         super.onDestroy()
         player.release()
+    }
+
+    override  fun onCreateOptionsMenu(menu : Menu): Boolean  {
+        val visit: String = getString(R.string.visit)
+        val com: String = getString(R.string.com)
+        menu.add(visit)
+        menu.add(com)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected( item : MenuItem) : Boolean{
+        val title: String = item.getTitle().toString()
+        if(title == "Visitame" || title == "Сайт")
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("http://suzdalenko.com/")))
+        else startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.suzdalenko.radio")))
+        return super.onOptionsItemSelected(item)
     }
 }
 

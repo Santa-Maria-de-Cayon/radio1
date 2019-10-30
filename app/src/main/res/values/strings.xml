@@ -22,31 +22,30 @@
     <string name="ser48">Серебряный Дождь 48</string>
 
 
-
-    <string  name="dial">Cadena Dial</string>
-    <string  name="los40">Los 40 Principales</string>
-    <string  name="los40clas">Los 40 Classic</string>
-    <string  name="cien">Cadena Cien</string>
-    <string  name="rock">Rock Fm</string>
-    <string  name="loca">Loca Fm</string>
-    <string  name="rac1">RAC 1</string>
-    <string  name="onda">Onda Cero</string>
-    <string  name="ibiza">Ibiza</string>
-    <string  name="rne">RNE</string>
-    <string  name="inter">Intereconomia</string>
-    <string  name="ser">SER</string>
-    <string  name="ib">Ibiza Sonica</string>
-    <string  name="vinilo">Radio Vinilo</string>
-    <string  name="cope">Radio Cope</string>
-    <string  name="max">Maxima</string>
-    <string  name="hit">Hit</string>
-    <string  name="kiss">Kiss</string>
-    <string  name="gay">Radio Gay</string>
-    <string  name="fresca">La Fresca</string>
-    <string  name="holi">Holiday y gym</string>
-    <string  name="xxx">Xxx Rock</string>
-    <string  name="radiole">Radiole</string>
-    <string  name="localatino">Loca Latino</string>
+    <string name="dial">Cadena Dial</string>
+    <string name="los40">Los 40 Principales</string>
+    <string name="los40clas">Los 40 Classic</string>
+    <string name="cien">Cadena Cien</string>
+    <string name="rock">Rock Fm</string>
+    <string name="loca">Loca Fm</string>
+    <string name="rac1">RAC 1</string>
+    <string name="onda">Onda Cero</string>
+    <string name="ibiza">Ibiza</string>
+    <string name="rne">RNE</string>
+    <string name="inter">Intereconomia</string>
+    <string name="ser">SER</string>
+    <string name="ib">Ibiza Sonica</string>
+    <string name="vinilo">Radio Vinilo</string>
+    <string name="cope">Radio Cope</string>
+    <string name="max">Maxima</string>
+    <string name="hit">Hit</string>
+    <string name="kiss">Kiss</string>
+    <string name="gay">Radio Gay</string>
+    <string name="fresca">La Fresca</string>
+    <string name="holi">Holiday y gym</string>
+    <string name="xxx">Xxx Rock</string>
+    <string name="radiole">Radiole</string>
+    <string name="localatino">Loca Latino</string>
 
 
     <string name="rusia">Россия</string>
@@ -59,6 +58,8 @@
     <string name="marusya">Маруся</string>
     <string name="evropa">Европа Плюс</string>
     <string name="energy">Радио Energy</string>
+    <string name="visit">Сайт</string>
+    <string name="com">Оставьте комментарий</string>
 
 
 </resources>
