@@ -9,6 +9,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.View.GONE
 import android.view.View.OnClickListener
+import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import android.widget.ScrollView
 import com.google.android.gms.ads.AdListener
@@ -21,6 +22,8 @@ class MainActivity : AppCompatActivity() , OnClickListener{
     lateinit var mAdView : AdView
     lateinit var layoutParams : RelativeLayout.LayoutParams
     lateinit var sv : ScrollView
+    lateinit var linAds : LinearLayout
+    var heitLinAds = 0
 
     override fun onCreate(savedInstanceState: Bundle?)  {
         super.onCreate(savedInstanceState)
@@ -30,7 +33,7 @@ class MainActivity : AppCompatActivity() , OnClickListener{
         spain.setOnClickListener(this)
 
         sv = findViewById(R.id.sv)
-
+        linAds = findViewById(R.id.linAds)
         MobileAds.initialize(this) {}
 
 
@@ -44,8 +47,11 @@ class MainActivity : AppCompatActivity() , OnClickListener{
 
         mAdView.adListener = object: AdListener() {
             override fun onAdLoaded() {
-                layoutParams.setMargins(0, 0, 0, 90);
-                sv.setLayoutParams(layoutParams)
+                sv.post {
+                    heitLinAds = linAds.height + 3
+                    layoutParams.setMargins(0, 0, 0, heitLinAds)
+                    sv.setLayoutParams(layoutParams)
+                }
             }
         }
     }

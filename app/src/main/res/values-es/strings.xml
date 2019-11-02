@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Cadena dial, Los 40 Principales, Radio de España</string>
+    <string name="app_name">Los 40 Radio</string>
 
     <string name="actEs">Radios de España</string>
     <string name="actRu">Radios de Rusia</string>
@@ -64,4 +64,6 @@
     <string name="visit">Visitame</string>
     <string name="com">Deja un comentario</string>
 
+    <string name="send_to">https://play.google.com/store/apps/details?id=com.suzdalenko.radio</string>
+    <string name="compart">Compartir</string>
 </resources>

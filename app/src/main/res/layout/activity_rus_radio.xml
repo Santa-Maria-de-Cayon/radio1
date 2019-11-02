@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/black"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
 
@@ -32,7 +32,7 @@
                    android:id="@+id/parent">
 
 
-                   <RelativeLayout style="RelatStyle"
+                   <RelativeLayout style="@style/RelatStyle"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content">
                        <TextView style="@style/TextViewStyle"
@@ -44,7 +44,7 @@
                            android:src="@drawable/go"/>
                    </RelativeLayout>
 
-                   <RelativeLayout style="RelatStyle"
+                   <RelativeLayout style="@style/RelatStyle"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content">
                        <TextView style="@style/TextViewStyle" android:id="@+id/_svoboda"
@@ -55,7 +55,7 @@
                            android:src="@drawable/go"/>
                    </RelativeLayout>
 
-                   <RelativeLayout style="RelatStyle"
+                   <RelativeLayout style="@style/RelatStyle"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content">
                        <TextView style="@style/TextViewStyle" android:id="@+id/_rus_radio128"
@@ -67,7 +67,7 @@
                    </RelativeLayout>
 
 
-                   <RelativeLayout style="RelatStyle"
+                   <RelativeLayout style="@style/RelatStyle"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content">
                        <TextView style="@style/TextViewStyle"  android:id="@+id/_drug_astraj32"
@@ -79,7 +79,7 @@
                    </RelativeLayout>
 
 
-                   <RelativeLayout style="RelatStyle"
+                   <RelativeLayout style="@style/RelatStyle"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content">
                        <TextView style="@style/TextViewStyle" android:id="@+id/_drug_astraj128"
@@ -91,7 +91,7 @@
                    </RelativeLayout>
 
 
-                   <RelativeLayout style="RelatStyle"
+                   <RelativeLayout style="@style/RelatStyle"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content">
                        <TextView style="@style/TextViewStyle" android:id="@+id/_shanson"
@@ -102,7 +102,7 @@
                            android:src="@drawable/go"/>
                    </RelativeLayout>
 
-                   <RelativeLayout style="RelatStyle"
+                   <RelativeLayout style="@style/RelatStyle"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content">
                        <TextView style="@style/TextViewStyle" android:id="@+id/_ejo"
@@ -113,7 +113,7 @@
                            android:src="@drawable/go"/>
                    </RelativeLayout>
 
-                   <RelativeLayout style="RelatStyle"
+                   <RelativeLayout style="@style/RelatStyle"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content">
                        <TextView style="@style/TextViewStyle" android:id="@+id/_di"
@@ -124,7 +124,7 @@
                            android:src="@drawable/go"/>
                    </RelativeLayout>
 
-                   <RelativeLayout style="RelatStyle"
+                   <RelativeLayout style="@style/RelatStyle"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content">
                        <TextView style="@style/TextViewStyle" android:id="@+id/_yomor"
@@ -135,7 +135,7 @@
                            android:src="@drawable/go"/>
                    </RelativeLayout>
 
-                   <RelativeLayout style="RelatStyle"
+                   <RelativeLayout style="@style/RelatStyle"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content">
                        <TextView style="@style/TextViewStyle" android:id="@+id/_r90"
@@ -146,7 +146,7 @@
                            android:src="@drawable/go"/>
                    </RelativeLayout>
 
-                   <RelativeLayout style="RelatStyle"
+                   <RelativeLayout style="@style/RelatStyle"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content">
                        <TextView style="@style/TextViewStyle"  android:id="@+id/_vesti"
@@ -157,7 +157,7 @@
                            android:src="@drawable/go"/>
                    </RelativeLayout>
 
-                   <RelativeLayout style="RelatStyle"
+                   <RelativeLayout style="@style/RelatStyle"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content">
                        <TextView style="@style/TextViewStyle" android:id="@+id/_mayak"
@@ -168,7 +168,7 @@
                            android:src="@drawable/go"/>
                    </RelativeLayout>
 
-                   <RelativeLayout style="RelatStyle"
+                   <RelativeLayout style="@style/RelatStyle"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content">
                        <TextView style="@style/TextViewStyle" android:id="@+id/_komsomol"
@@ -179,7 +179,7 @@
                            android:src="@drawable/go"/>
                    </RelativeLayout>
 
-                   <RelativeLayout style="RelatStyle"
+                   <RelativeLayout style="@style/RelatStyle"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content">
                        <TextView style="@style/TextViewStyle" android:id="@+id/_ser48"
@@ -190,7 +190,7 @@
                            android:src="@drawable/go"/>
                    </RelativeLayout>
 
-                   <RelativeLayout style="RelatStyle"
+                   <RelativeLayout style="@style/RelatStyle"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content">
                        <TextView style="@style/TextViewStyle" android:id="@+id/_ser128"
@@ -203,7 +203,7 @@
 
 
 
-                   <RelativeLayout style="RelatStyle"
+                   <RelativeLayout style="@style/RelatStyle"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content">
                        <TextView style="@style/TextViewStyle" android:id="@+id/_rossii"
@@ -214,7 +214,7 @@
                            android:src="@drawable/go"/>
                    </RelativeLayout>
 
-                   <RelativeLayout style="RelatStyle"
+                   <RelativeLayout style="@style/RelatStyle"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content">
                        <TextView style="@style/TextViewStyle" android:id="@+id/_record"
@@ -225,7 +225,7 @@
                            android:src="@drawable/go"/>
                    </RelativeLayout>
 
-                   <RelativeLayout style="RelatStyle"
+                   <RelativeLayout style="@style/RelatStyle"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content">
                        <TextView style="@style/TextViewStyle" android:id="@+id/_newradio"
@@ -236,7 +236,7 @@
                            android:src="@drawable/go"/>
                    </RelativeLayout>
 
-                   <RelativeLayout style="RelatStyle"
+                   <RelativeLayout style="@style/RelatStyle"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content">
                        <TextView style="@style/TextViewStyle" android:id="@+id/_marusya"
@@ -247,7 +247,7 @@
                            android:src="@drawable/go"/>
                    </RelativeLayout>
 
-                   <RelativeLayout style="RelatStyle"
+                   <RelativeLayout style="@style/RelatStyle"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content">
                        <TextView style="@style/TextViewStyle" android:id="@+id/_evropa"
@@ -258,7 +258,7 @@
                            android:src="@drawable/go"/>
                    </RelativeLayout>
 
-                   <RelativeLayout style="RelatStyle"
+                   <RelativeLayout style="@style/RelatStyle"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content">
                        <TextView style="@style/TextViewStyle" android:id="@+id/_energy"
@@ -319,7 +319,7 @@
     </com.google.android.gms.ads.AdView>
 
 
-
+<!--              ads:adUnitId="ca-app-pub-4356216065008445/6184917593"      -->
 
 
 

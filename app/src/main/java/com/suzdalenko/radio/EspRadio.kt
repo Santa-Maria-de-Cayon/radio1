@@ -1,6 +1,7 @@
 package com.suzdalenko.radio
 
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,6 +11,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.RelativeLayout
 import android.widget.ScrollView
+import android.widget.TextView
 import com.google.android.exoplayer2.ExoPlayerFactory
 import com.google.android.exoplayer2.SimpleExoPlayer
 import com.google.android.exoplayer2.source.ProgressiveMediaSource
@@ -20,18 +22,23 @@ import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.activity_esp_radio.*
 import kotlinx.android.synthetic.main.activity_esp_radio.player_view
-
+import kotlinx.android.synthetic.main.activity_rus_radio.*
 
 
 class EspRadio : AppCompatActivity()  , View.OnClickListener {
     lateinit var  player: SimpleExoPlayer
-    lateinit var mAdViewRus : AdView
-    lateinit var rus_scrol : ScrollView
+    lateinit var mAdViewEs : AdView
+    lateinit var es_scrol : ScrollView
     lateinit var layoutParams : RelativeLayout.LayoutParams
-
+    var heigthPlayer = 0
+    var heitLinAds = 0
 
     override fun onClick(v: View?) {
         if (v != null) {
+            if(v is TextView){
+                setColor()
+                v.setTextColor(Color.parseColor("#ffffff"))
+            }
             when(v.id){
                 R.id.dial ->       openBrouser("http://suzdalenko.com?+cadena-dial")
                 R.id.los40 ->      openBrouser("http://suzdalenko.com?+los-40")
@@ -54,12 +61,11 @@ class EspRadio : AppCompatActivity()  , View.OnClickListener {
                 R.id.gay ->        openBrouser("http://suzdalenko.com?+gay")
                 R.id.fresca ->     openBrouser("http://suzdalenko.com?+la-fresca")
                 R.id.holi ->       openBrouser("http://suzdalenko.com?+holidaygym")
-                R.id.xxx ->        openBrouser("http://suzdalenko.com?+xxx-rock")
                 R.id.radiole ->    openBrouser("http://suzdalenko.com?+radiole")
                 R.id.localatino -> openBrouser("http://suzdalenko.com?+loca-latino")
 
                 R.id._dial ->       playExoPlayer("https://17873.live.streamtheworld.com/CADENADIAL_SC")
-                R.id._los40 ->      playExoPlayer("https://20403.live.streamtheworld.com/LOS40_SC")
+                R.id._los40 ->      playExoPlayer("https://20103.live.streamtheworld.com/LOS40AAC.aac?csegid=12000&dist=los40-web-live_streaming_play&tdsdk=js-2.9&pname=TDSdk&pversion=2.9&banners=none&sbmid=d18df117-cfaa-4e54-9b1b-373e0897d092")
                 R.id._los40clas ->  playExoPlayer("https://20863.live.streamtheworld.com/LOS40_CLASSIC_SC")
                 R.id._cien ->       playExoPlayer("https://cadena100-cope-rrcast.flumotion.com/cope/cadena100-low.mp3")
                 R.id._rock ->       playExoPlayer("https://rockfm-cope-rrcast.flumotion.com/cope/rockfm-low.mp3")
@@ -79,9 +85,9 @@ class EspRadio : AppCompatActivity()  , View.OnClickListener {
                 R.id._gay ->        playExoPlayer("http://icepool.silvacast.com/GAYFM.mp3")
                 R.id._fresca ->     playExoPlayer("http://stream.produccionesdale.com:8899/altacalidad")
                 R.id._holi ->       playExoPlayer("http://holidaygym.emitironline.com/")
-                R.id._xxx ->        playExoPlayer("http://sc15.shoutcaststreaming.us:8140/;4537697477933063stream.nsv")
                 R.id._radiole ->    playExoPlayer("http://20723.live.streamtheworld.com/RADIOLE.mp3")
                 R.id._localatino -> playExoPlayer("http://audio-online.net:8012/live")
+
             }
         }
     }
@@ -92,18 +98,22 @@ class EspRadio : AppCompatActivity()  , View.OnClickListener {
 
 
 
-        rus_scrol = findViewById(R.id.es_scrol)
+        es_scrol = findViewById(R.id.es_scrol)
         MobileAds.initialize(this) {}
 
-        mAdViewRus = findViewById(R.id.mAdViewRus)
+        mAdViewEs = findViewById(R.id.mAdViewEs)
         val adRequest = AdRequest.Builder().build()
-        mAdViewRus.loadAd(adRequest)
+        mAdViewEs.loadAd(adRequest)
         Log.d("tag", "start start")
-        layoutParams = rus_scrol.getLayoutParams() as RelativeLayout.LayoutParams
-        mAdViewRus.adListener = object: AdListener() {
+        layoutParams = es_scrol.getLayoutParams() as RelativeLayout.LayoutParams
+        mAdViewEs.adListener = object: AdListener() {
             override fun onAdLoaded() {
-                layoutParams.setMargins(0, 75, 0, 190);
-                rus_scrol.setLayoutParams(layoutParams)
+                es_scrol.post{
+                    heigthPlayer = player_view.height + 3
+                    heitLinAds = mAdViewEs.height + 3
+                    layoutParams.setMargins(0, heigthPlayer, 0, heitLinAds);
+                    es_scrol.setLayoutParams(layoutParams)
+                }
             }
         }
 
@@ -143,7 +153,6 @@ class EspRadio : AppCompatActivity()  , View.OnClickListener {
         gay.setOnClickListener(this)
         fresca.setOnClickListener(this)
         holi.setOnClickListener(this)
-        xxx.setOnClickListener(this)
         radiole.setOnClickListener(this)
         localatino.setOnClickListener(this)
 
@@ -168,7 +177,6 @@ class EspRadio : AppCompatActivity()  , View.OnClickListener {
         _gay.setOnClickListener(this)
         _fresca.setOnClickListener(this)
         _holi.setOnClickListener(this)
-        _xxx.setOnClickListener(this)
         _radiole.setOnClickListener(this)
         _localatino.setOnClickListener(this)
 
@@ -199,16 +207,51 @@ class EspRadio : AppCompatActivity()  , View.OnClickListener {
     override  fun onCreateOptionsMenu(menu : Menu): Boolean  {
         val visit: String = getString(R.string.visit)
         val com: String = getString(R.string.com)
+        val compart : String = getString(R.string.compart)
         menu.add(visit)
         menu.add(com)
+        menu.add(compart)
         return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected( item : MenuItem) : Boolean{
         val title: String = item.getTitle().toString()
-        if(title == "Visitame" || title == "Сайт")
+        if(title == "Compartir" || title == "Поделиться"){
+            val shareIntent = Intent()
+            shareIntent.action = Intent.ACTION_SEND
+            shareIntent.type="text/plain"
+            shareIntent.putExtra(Intent.EXTRA_TEXT, "La Radio que te encantara.                 https://play.google.com/store/apps/details?id=com.suzdalenko.radio");
+            startActivity(Intent.createChooser(shareIntent, "Radio"))
+        }
+        else if(title == "Visitame" || title == "Сайт")
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("http://suzdalenko.com/")))
         else startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.suzdalenko.radio")))
         return super.onOptionsItemSelected(item)
+    }
+
+    fun setColor(){
+        _dial .setTextColor(Color.parseColor("#000000"))
+        _los40 .setTextColor(Color.parseColor("#000000"))
+        _los40clas .setTextColor(Color.parseColor("#000000"))
+        _cien .setTextColor(Color.parseColor("#000000"))
+        _rock .setTextColor(Color.parseColor("#000000"))
+        _loca .setTextColor(Color.parseColor("#000000"))
+        _rac1 .setTextColor(Color.parseColor("#000000"))
+        _onda .setTextColor(Color.parseColor("#000000"))
+        _ibiza .setTextColor(Color.parseColor("#000000"))
+        _rne .setTextColor(Color.parseColor("#000000"))
+        _inter .setTextColor(Color.parseColor("#000000"))
+        _ser .setTextColor(Color.parseColor("#000000"))
+        _ib .setTextColor(Color.parseColor("#000000"))
+        _vinilo .setTextColor(Color.parseColor("#000000"))
+        _cope .setTextColor(Color.parseColor("#000000"))
+        _max .setTextColor(Color.parseColor("#000000"))
+        _hit .setTextColor(Color.parseColor("#000000"))
+        _kiss .setTextColor(Color.parseColor("#000000"))
+        _gay .setTextColor(Color.parseColor("#000000"))
+        _fresca .setTextColor(Color.parseColor("#000000"))
+        _holi .setTextColor(Color.parseColor("#000000"))
+        _radiole .setTextColor(Color.parseColor("#000000"))
+        _localatino .setTextColor(Color.parseColor("#000000"))
     }
 }

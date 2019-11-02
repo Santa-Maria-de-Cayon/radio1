@@ -1,6 +1,7 @@
 package com.suzdalenko.radio
 
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,6 +11,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.RelativeLayout
 import android.widget.ScrollView
+import android.widget.TextView
 import com.google.android.exoplayer2.ExoPlayerFactory
 import com.google.android.exoplayer2.SimpleExoPlayer
 import com.google.android.exoplayer2.source.ProgressiveMediaSource
@@ -25,6 +27,8 @@ class RusRadio : AppCompatActivity()  , View.OnClickListener {
     lateinit var  player:SimpleExoPlayer
     lateinit var rus_scrol : ScrollView
     lateinit var layoutParams : RelativeLayout.LayoutParams
+    var heitLinAds = 0
+    var heigthPlayer = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,10 +44,16 @@ class RusRadio : AppCompatActivity()  , View.OnClickListener {
         mAdViewRus.loadAd(adRequest)
         Log.d("tag", "start start")
         layoutParams = rus_scrol.getLayoutParams() as RelativeLayout.LayoutParams
+
         mAdViewRus.adListener = object: AdListener() {
             override fun onAdLoaded() {
-                layoutParams.setMargins(0, 75, 0, 190);
-                rus_scrol.setLayoutParams(layoutParams)
+                rus_scrol.post{
+                    heigthPlayer = player_view.height + 3
+                    heitLinAds = mAdViewRus.height + 3
+                    layoutParams.setMargins(0, heigthPlayer, 0, heitLinAds);
+                    rus_scrol.setLayoutParams(layoutParams)
+                }
+
             }
         }
 
@@ -119,6 +129,10 @@ class RusRadio : AppCompatActivity()  , View.OnClickListener {
 
     override fun onClick(v: View?) {
         if (v != null) {
+            if(v is TextView){
+                setColor()
+                v.setTextColor(Color.parseColor("#ffffff"))
+            }
             when(v.id){
                 R.id.rus_radio96    -> openBrouser("http://suzdalenko.com?+russkoe-radio96")
                 R.id.svoboda        -> openBrouser("http://suzdalenko.com?+svoboda")
@@ -186,17 +200,51 @@ class RusRadio : AppCompatActivity()  , View.OnClickListener {
     override  fun onCreateOptionsMenu(menu : Menu): Boolean  {
         val visit: String = getString(R.string.visit)
         val com: String = getString(R.string.com)
+        val compart : String = getString(R.string.compart)
         menu.add(visit)
         menu.add(com)
+        menu.add(compart)
         return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected( item : MenuItem) : Boolean{
         val title: String = item.getTitle().toString()
-        if(title == "Visitame" || title == "Сайт")
+        if(title == "Compartir" || title == "Поделиться"){
+            val shareIntent = Intent()
+            shareIntent.action = Intent.ACTION_SEND
+            shareIntent.type="text/plain"
+            shareIntent.putExtra(Intent.EXTRA_TEXT, "Слушай радио. Это главное        https://play.google.com/store/apps/details?id=com.suzdalenko.radio");
+            startActivity(Intent.createChooser(shareIntent, "Radio"))
+        }
+        else if(title == "Visitame" || title == "Сайт")
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("http://suzdalenko.com/")))
         else startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.suzdalenko.radio")))
         return super.onOptionsItemSelected(item)
+    }
+
+    fun setColor(){
+       _rus_radio96   .setTextColor(Color.parseColor("#000000"))
+       _svoboda       .setTextColor(Color.parseColor("#000000"))
+       _rus_radio128  .setTextColor(Color.parseColor("#000000"))
+       _drug_astraj32 .setTextColor(Color.parseColor("#000000"))
+       _drug_astraj128.setTextColor(Color.parseColor("#000000"))
+       _shanson       .setTextColor(Color.parseColor("#000000"))
+       _ejo           .setTextColor(Color.parseColor("#000000"))
+       _di            .setTextColor(Color.parseColor("#000000"))
+       _yomor         .setTextColor(Color.parseColor("#000000"))
+       _r90           .setTextColor(Color.parseColor("#000000"))
+       _vesti         .setTextColor(Color.parseColor("#000000"))
+       _mayak         .setTextColor(Color.parseColor("#000000"))
+       _komsomol      .setTextColor(Color.parseColor("#000000"))
+       _ser48         .setTextColor(Color.parseColor("#000000"))
+       _ser128        .setTextColor(Color.parseColor("#000000"))
+       _rossii        .setTextColor(Color.parseColor("#000000"))
+       _record        .setTextColor(Color.parseColor("#000000"))
+       _newradio      .setTextColor(Color.parseColor("#000000"))
+       _marusya       .setTextColor(Color.parseColor("#000000"))
+       _evropa        .setTextColor(Color.parseColor("#000000"))
+       _energy        .setTextColor(Color.parseColor("#000000"))
+
     }
 }
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Русское Радио, Радио Свобода, Вести Фм, Радио России</string>
+    <string name="app_name">Русское Радио России</string>
 
     <string name="actEs">Радио Испании</string>
     <string name="actRu">Радио России </string>
@@ -61,5 +61,7 @@
     <string name="visit">Сайт</string>
     <string name="com">Оставьте комментарий</string>
 
+    <string name="send_to">https://play.google.com/store/apps/details?id=com.suzdalenko.radio</string>
+    <string name="compart">Поделиться</string>
 
 </resources>
